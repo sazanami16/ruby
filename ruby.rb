@@ -1,14 +1,7 @@
-a = 1
-b = 0
-c = 5
 i = 0
 
-while i <= 30
-  n = a + b + c 
-  a = b
-  b = c
-  c = n
+while i <= 64
   i += 1
+  num = i ** 4
+  puts num
 end
-
-puts c
