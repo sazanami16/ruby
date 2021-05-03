@@ -1,28 +1,54 @@
-def binary_search(array, right, target)
-  left = 0
-  while left <= right
-    center = (left + right) / 2
-    if array[center] == target
-      return center
-    elsif array[center] < target
-      left = center + 1
-    else
-      right = center - 1
-    end
-  end
-  return -1 
+def register_book(books)
+  puts '著者を入力してください'
+  author = gets.chomp
+  puts 'タイトルを入力してください'
+  title = gets.chomp
+  puts '価格を入力してください'
+  price = gets.to_i
+  book = { author: author, title: title, price: price }
+  books << book
 end
 
-array=[1,3,5,6,9,10,13,20,26,31]
+def show_books(books)
+  puts "平均価格: #{average_price(books)}円"
+  puts "見たい番号を入力してください"
+  index = 1
+  books.each do |book|
+    puts "#{index}: #{book[:title]}"
+    index += 1
+  end
+  input = gets.to_i
+  show_detail(books[input - 1])
+end
 
-puts "検索したい数字を入力してください"
-target = gets.to_i
-number_of_elements = array.count
+def show_detail(book)
+  puts "著者 #{book[:author]}"
+  puts "タイトル #{book[:title]}"
+  puts "価格 #{book[:price]}円"
+end
 
-result = binary_search(array, number_of_elements, target)
+def average_price(books)
+  total = 0
+  books.each do |book|
+    total += book[:price]
+  end
+  average = total / books.length
+end
 
-if result == -1
-  puts "#{target}は配列内に存在しません"
-else
-  puts "#{target}は配列の#{result + 1}番目に存在します "
+books = []
+while true do
+  puts "番号を入力してください"
+  puts "0: 本を登録する"
+  puts "1: 本の一覧を見る"
+  puts "2: 終了する"
+  case gets.to_i
+  when 0
+   register_book(books)
+  when 1
+    show_books(books)
+  when 2
+    exit
+  else
+    puts '無効な値です'
+  end
 end
