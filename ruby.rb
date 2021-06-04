@@ -1,6 +1,5 @@
-array = [1, 3, 5, 6, 3, 2, 5, 23, 2]
+array = [4, 0, 5, -1, 3, 10, 6, -8]
 ans = 0
-
-array.each { |num| ans += num }
+array.each { |i| ans += i if i >= 5 }
 
 puts ans
