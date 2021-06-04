@@ -1,12 +1,11 @@
-loop = gets.chomp.to_i # 何回数字を入力させるかを任意で入力できる処理
-ans = 0 # 初期値を設定
+loop = gets.chomp.to_i # 文字を入力する回数を任意で入力できるようにして、その回数分入力した文字が出力される。
 
-(1..loop).each do |i| # 上記で入力した数字の回数だけ値を入力でき、5以上の数字であれば、値を足し込んでいく処理を記述している。
-  num = gets.chomp.to_i # 足し込むかどうかを判定する数字を任意に入力できる。
-
-   if num >= 5
-     ans += num
-   end
+(1..loop).each do |i|
+    output = gets.chomp
+    puts output
 end
 
-puts ans
+
+
+num = gets.chomp.to_i  # 簡略化した記述方法
+(0...num).each { puts gets.chomp }
