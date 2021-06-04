@@ -1,4 +1,4 @@
-str = "app leomon banana".split(' ') # ()内で分割する文字または空白値、何分割するかを指定できる。
-puts str
+nums = gets.split(' ') 
+puts nums[0].to_i + nums[1].to_i
 
-# splitはStringクラスのメソッドなので、String以外に使用するとエラーになる。
+
