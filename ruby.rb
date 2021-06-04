@@ -1,5 +1,4 @@
-num = gets.chomp.to_i
+array = [1, 3, 5, 6, 3, 2, 5, 23, 2]
 
-(1..num).each do |i|
-  output = gets.chomp.to_i
-end
+num = array.sum
+puts num
