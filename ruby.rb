@@ -1,6 +1,16 @@
-nums = gets.chomp.split(' ')
-str = gets.chomp
+num = gets.chomp.to_i
 
-((nums[0].to_i - 1)..(nums[1].to_i - 1)).each { |i| print str[i] }
-
-print "\n"
+(1..num).each do |i|
+    str = gets.chomp
+    
+    case str 
+    when 'forward' then
+        puts 'Sunny'
+    when 'reverse'
+        puts 'Rainy'
+    when 'sideways'
+        puts 'Cloudy'
+    else
+        'false'
+    end
+end
