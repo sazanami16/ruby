@@ -1,6 +1,10 @@
-def unique_names(names1, names2)
-  names1.concat(names2)
-  p names1.uniq
+class IceCreamMachine
+
+
+    def scoops(items1, items2)
+      p items1.product(items2).map{|e| e.join()}
+    end
 end
 
-unique_names(['Ava', 'Emma', 'Olivia'], ['Olivia', 'Sophia', 'Emma'])
+  ice = IceCreamMachine.new
+  ice.scoops(['バニラ', 'チョコレート'], ['チョコレートソース', 'ミント'])
